@@ -7,9 +7,13 @@ import 'package:flutter/services.dart';
 import 'package:untitled/pages/userdata.dart';
 
 String user_name = '';
+String user_id = '';
 dynamic profile = '';
 dynamic follower = '';
 dynamic following = '';
+String role = '';
+String contact = '';
+String company = '';
 
 class UserNameInputField extends StatelessWidget {
   TextEditingController _controller = TextEditingController();
@@ -39,10 +43,14 @@ class UserNameInputField extends StatelessWidget {
                               if (response.statusCode == 200) {
                                 //print(response.body);
                                 Map<String, dynamic> data = jsonDecode(response.body);
-                                user_name = data['login'];
+                                user_id = data['login'];
+                                user_name = data['name'];
                                 profile = data['avatar_url'];
-                                follower = data['followers_url'];
-                                following = data['following_url'];
+                                follower = data['followers'];
+                                following = data['following'];
+                                role = data['bio'];
+                                contact = data['email'];
+                                company = data['company'];
 
                               } else{
                                 throw Exception('Failed to load post');
