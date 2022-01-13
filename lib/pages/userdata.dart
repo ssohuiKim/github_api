@@ -19,32 +19,33 @@ class _userdataState extends State<userdata> {
             child: Container(
               decoration: BoxDecoration(
               color: Colors.white),
-              child: Column(
+              child: ListView(
+                children: [Column(
       children: [
-              Image.network('${profile}',
-              width: 200,
-              height: 200,),
-              Divider(),
-              Text('ID : ${user_id}'),
-              Divider(),
-              Text('User name : ${user_name}'),
-              Divider(),
-              Text('Follower : ${follower}'),
-              Divider(),
-              Text('Following : ${following}'),
-              Divider(),
-              Text('Role : ${role}'),
-              Divider(),
-              Text('Company : ${company}'),
-              Divider(),
-              Text('Contact : ${contact}')
-        
-        
+                Text(' ', style: TextStyle(fontSize: 50)),
+                Image.network('${profile}',
+                width: 200,
+                height: 200,),
+                Text(' ', style: TextStyle(fontSize: 30)),
+                Divider(),
+                ListTile(leading: Icon(Icons.face),title: Text('ID : ${user_id}',style: TextStyle(fontSize: 18))),
+                Divider(),
+                ListTile(leading: Icon(Icons.face_retouching_natural), title: Text('User name : ${user_name}',style: TextStyle(fontSize: 17))),
+                Divider(),
+                ListTile(leading: Icon(Icons.thumb_up_alt_outlined), title: Text('Follower : ${follower}',style: TextStyle(fontSize: 17))),
+                Divider(),
+                ListTile(leading: Icon(Icons.remove_red_eye_rounded), title: Text('Following : ${following}',style: TextStyle(fontSize: 17))),
+                Divider(),
+                ListTile(leading: Icon(Icons.work), title: Text('Role : ${role}',style: TextStyle(fontSize: 17))),
+                Divider(),
+                ListTile(leading: Icon(Icons.place_rounded), title: Text('Company : ${company}',style: TextStyle(fontSize: 17))),
+                Divider(),
+                ListTile(leading: Icon(Icons.contact_mail_rounded), title: Text('Contact : ${contact}',style: TextStyle(fontSize: 17)))
       ],
-    ),
+    ),]
+              ),
             ),
           ),
-
     );
   }
 }
