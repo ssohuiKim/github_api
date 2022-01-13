@@ -73,28 +73,3 @@ class UserNameInputField extends StatelessWidget {
 
   }
 }
-
-class userdata extends StatefulWidget {
-  const userdata({Key? key}) : super(key: key);
-
-  @override
-  _userdataState createState() => _userdataState();
-}
-
-class _userdataState extends State<userdata> {
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.network('${profile}'),
-        Text(
-          '${user_name}',
-          style: TextStyle(
-              fontSize: 15,
-              color: Colors.indigo,
-          ),
-        )
-      ],
-    );
-  }
-}
